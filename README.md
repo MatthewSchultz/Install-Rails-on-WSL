@@ -130,13 +130,13 @@ gem install lolcat
 
 Helps make sure gems are working anyways.......not really. I just find lolcat funny.
 
-## Step 7 - Install the Rails:
+## Step 7 - Install the Rails
 
 ```bash
 gem install rails
 ```
 
-Here we are just going for the latest version, at the time of this writing, **5.2.3**.
+Here we are just going for the latest version, at the time of this writing, **6.0.3**.
 
 Because we installed all that dependencies in step 2, this *should* install nokogiri correctly.
 
