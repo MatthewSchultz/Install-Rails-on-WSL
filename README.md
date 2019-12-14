@@ -15,11 +15,15 @@ A simple guide to installing rails on WSL. Not super unique, but complete....
 ### Setup NodeJS as a Javascript runtime
 
 ```bash
-curl -sL https://deb.nodesource.com/setup_8.x | sudo -E bash -
+curl -sL https://deb.nodesource.com/setup_13.x | sudo -E bash -
 sudo apt-get install -y nodejs
 ```
 
-This sets up NodeJS. Some guuides say to do this later, but can do it here no problem.
+This sets up NodeJS by downloading a setup script from the NodeJS site and running it. This is superior to simply installing node through APT, since the normal package registry version is ususally woefully out of date.
+
+Be sure to change the version your trying to get in the URI - the above URI gets the latest version of the v13 major branch.
+
+Some guuides say to do this later, but can do it here no problem.
 
 ### Setup Dependencies
 
