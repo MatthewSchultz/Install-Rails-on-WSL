@@ -10,7 +10,9 @@ A simple guide to installing rails on WSL. Not super unique, but complete....
 * Hit the Launch button in store, or find Ubuntu in start menu. Watch and wait while it unpacks itself.
 * Run `sudo apt update && sudo apt upgrade` to start getting packages
 
-## Step 2 - Pre-Install
+## Step 2 - Install NodeJS and YARN
+
+Rails 6 now requires the YARN package manager to function, since it likes webpack more than other stuff now. It also tends to be built heavily around Node packages. While it's theoretically possible to use Rails without these things, in modern web apps, Node and YARN should be installed.
 
 ### Setup NodeJS as a Javascript runtime
 
@@ -23,7 +25,31 @@ This sets up NodeJS by downloading a setup script from the NodeJS site and runni
 
 Be sure to change the version your trying to get in the URI - the above URI gets the latest version of the v13 major branch.
 
-Some guuides say to do this later, but can do it here no problem.
+### Setup the YARN package manager
+
+First, let's add the YARN server to the package repo list (since the one that is included with repo lists is nearly guaranteed to be out of date):
+
+```bash
+curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
+echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
+sudo apt update
+```
+
+Now install YARN...
+
+```bash
+sudo apt install yarn
+```
+
+...and test
+
+```bash
+yarn --version
+```
+
+Rails 6, as of this writing, requires at least YARN 1.0.
+
+## Step 3 - Pre-Installation
 
 ### Setup Dependencies
 
@@ -50,7 +76,7 @@ sudo apt-get install tmux tty-clock htop cowsay postgresql-client fortune
 
 These are somewhat optional, but make living in semi-linux bearable.
 
-## Step 3 - Ruby via rbenv
+## Step 4 - Ruby via rbenv
 
 This will install Ruby via rbenv. Doing it via ruby-full seems to suck.
 
@@ -83,7 +109,7 @@ gem install bundler
 rbenv rehash
 ```
 
-## Step 4 - Setup GIT
+## Step 5 - Setup GIT
 
 ```bash
 git config --global color.ui true
@@ -96,7 +122,7 @@ This sets up GIT and runs keygen. Now `cat ~/.ssh/id_rsa.pub` to get the key to 
 
 Now do `ssh -T git@bitbucket.org` or `ssh -T git@github.com` to test it.
 
-## Step 5 - Because we Can
+## Step 6 - Because we Can
 
 ```bash
 gem install lolcat
@@ -104,7 +130,7 @@ gem install lolcat
 
 Helps make sure gems are working anyways.......not really. I just find lolcat funny.
 
-## Step 6 - Install the Rails:
+## Step 7 - Install the Rails:
 
 ```bash
 gem install rails
@@ -116,7 +142,7 @@ Because we installed all that dependencies in step 2, this *should* install noko
 
 Test by `rails -v`
 
-## Step 7 - Change the Way WSL Handles CHMOD
+## Step 8 - Change the Way WSL Handles CHMOD
 
 Do `sudo vim /etc/wsl.conf` - we need to write a wsl config to turn on metadata tracking for mounted noise. Into that file write:
 
@@ -128,32 +154,6 @@ mountFsTab = false
 ```
 
 Now, restart the entire Ubuntu instance, and Rails will suddenly behave itself. Skipping this causes Rails to fail on Rails new with some complete rubbish about permissions...
-
-## Step 8 - Install YARN
-
-Rails 6 now requires the YARN package manager to function, since it likes webpack more than other stuff now.
-
-First, let's add the YARN server to the package repo list (since the one that is included with repo lists is nearly guaranteed to be out of date):
-
-```bash
-curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
-echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
-sudo apt update
-```
-
-Now install YARN...
-
-```bash
-sudo apt install yarn
-```
-
-...and test
-
-```bash
-yarn --version
-```
-
-Rails 6, as of this writing, requires 1.0, as of this writing, 1.19 will be installed.
 
 ## Step 9 - Get to Project Directory
 
