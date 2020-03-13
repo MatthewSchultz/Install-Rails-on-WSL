@@ -157,4 +157,4 @@ Now, restart the entire Ubuntu instance, and Rails will suddenly behave itself. 
 
 ## Step 9 - Get to Project Directory
 
-Do `cd mnt/<windows full path>` to get to the project dir
+Do `cd /mnt/<windows full path>` to get to the project directory. Project directories ARE case sensitive, use linux folder seperation, do not use the colon notation for drives, and the drive letter is lowercased, so `C:\Users\You\Projects\SomeFolder\` becomes `/mnt/c/Users/You/Projects/SomeFolder`.
