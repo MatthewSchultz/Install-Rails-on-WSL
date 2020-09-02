@@ -18,7 +18,7 @@ Rails 6 now requires the YARN package manager to function, since it likes webpac
 
 ```bash
 curl -sL https://deb.nodesource.com/setup_14.x | sudo -E bash -
-sudo apt-get install -y nodejs
+sudo apt install -y nodejs
 ```
 
 This sets up NodeJS by downloading a setup script from the NodeJS site and running it. This is superior to simply installing node Ubuntu's managed repos, since that version is ususally woefully out of date.
