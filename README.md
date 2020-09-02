@@ -54,10 +54,10 @@ Rails 6, as of this writing, requires at least YARN 1.0.
 ### Setup Dependencies
 
 ```bash
-sudo apt-get install git-core curl zlib1g-dev build-essential libssl-dev libreadline-dev libyaml-dev libsqlite3-dev sqlite3 libxml2-dev libxslt1-dev libcurl4-openssl-dev software-properties-common libffi-dev
-sudo apt-get install libpq-dev
-sudo apt-get install imagemagick
-sudo apt-get install graphviz
+sudo apt install curl zlib1g-dev build-essential libssl-dev libreadline-dev libyaml-dev libsqlite3-dev sqlite3 libxml2-dev libxslt1-dev libcurl4-openssl-dev software-properties-common libffi-dev
+sudo apt install libpq-dev
+sudo apt install imagemagick
+sudo apt install graphviz
 ```
 
 Here we install a bunch of dependencies, of which libxml2-dev is particularly important for nokogiri.
