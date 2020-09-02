@@ -17,7 +17,7 @@ Rails 6 now requires the YARN package manager to function, since it likes webpac
 ### Setup NodeJS as a Javascript runtime
 
 ```bash
-curl -sL https://deb.nodesource.com/setup_13.x | sudo -E bash -
+curl -sL https://deb.nodesource.com/setup_14.x | sudo -E bash -
 sudo apt-get install -y nodejs
 ```
 
