@@ -23,7 +23,7 @@ sudo apt install -y nodejs
 
 This sets up NodeJS by downloading a setup script from the NodeJS site and running it. This is superior to simply installing node Ubuntu's managed repos, since that version is ususally woefully out of date.
 
-Be sure to change the version your trying to get in the URI - the above URI gets the latest version of the v13 major branch.
+Be sure to change the version your trying to get in the URI - the above URI gets the latest version of the v14 major branch.
 
 ### Setup the YARN package manager
 
