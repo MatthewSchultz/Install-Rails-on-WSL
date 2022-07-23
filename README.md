@@ -17,7 +17,7 @@ Rails 6 now requires the YARN package manager to function, since it likes webpac
 ### Setup NodeJS as a Javascript runtime
 
 ```bash
-curl -sL https://deb.nodesource.com/setup_14.x | sudo -E bash -
+curl -sL https://deb.nodesource.com/setup_16.x | sudo -E bash -
 sudo apt install -y nodejs
 ```
 
@@ -91,8 +91,8 @@ git clone https://github.com/rbenv/ruby-build.git ~/.rbenv/plugins/ruby-build
 echo 'export PATH="$HOME/.rbenv/plugins/ruby-build/bin:$PATH"' >> ~/.bashrc
 exec $SHELL
 
-rbenv install 2.7.1
-rbenv global 2.7.1
+rbenv install 3.1.2
+rbenv global 3.1.2
 ruby -v
 ```
 
@@ -143,6 +143,8 @@ Because we installed all that dependencies in step 2, this *should* install noko
 Test by `rails -v`
 
 ## Step 8 - Change the Way WSL Handles CHMOD
+
+THIS STEP SHOULD NO LONGER BE REQUIRED - ONLY DO THIS IF YOU RUN INTO ISSUES.
 
 Do `sudo vim /etc/wsl.conf` - we need to write a wsl config to turn on metadata tracking for mounted noise. Into that file write:
 
